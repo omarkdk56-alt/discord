@@ -16,5 +16,5 @@ ghapi==1.0.4
 wikipedia==1.4.0
 wolframalpha==5.0.0
 psutil==5.9.6
-psutil-windows==5.9.6
+psutil
 wavelink==3.0.0
