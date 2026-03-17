@@ -1,0 +1,111 @@
+{
+  "bot": {
+    "token": "",
+    "owner_id": "1246759784649068616",
+    "prefix": "h!",
+    "default_status": "dnd",
+    "activity_type": "playing",
+    "activity_text": "h!yardim | En iyi bot",
+    "embed_color": "5865F2",
+    "error_color": "ED4245",
+    "success_color": "57F287",
+    "client_id": "1452460095085744238",
+    "client_secret": ""
+  },
+  "database": {
+    "type": "sqlite",
+    "name": "huh.db"
+  },
+  "economy": {
+    "daily_reward": 250,
+    "weekly_reward": 1500,
+    "work_min": 50,
+    "work_max": 300,
+    "crime_min": -500,
+    "crime_max": 1000,
+    "starting_balance": 500,
+    "max_bank": 1000000,
+    "interest_rate": 0.05
+  },
+  "leveling": {
+    "enabled": true,
+    "xp_per_message": 5,
+    "xp_multiplier": 1.5,
+    "level_roles": [
+      {"level": 5, "role": "Acemi"},
+      {"level": 10, "role": "Amatör"},
+      {"level": 20, "role": "Orta"},
+      {"level": 30, "role": "Uzman"},
+      {"level": 50, "role": "Efsane"},
+      {"level": 75, "role": "Master"},
+      {"level": 100, "role": "Legend"}
+    ]
+  },
+  "moderation": {
+    "default_mute_duration": 30,
+    "default_ban_duration": 7,
+    "auto_mute_threshold": 5,
+    "log_channel": "mod-logs",
+    "automod": {
+      "anti_spam": true,
+      "anti_invite": true,
+      "anti_link": true,
+      "anti_caps": true,
+      "max_links": 3,
+      "max_mentions": 5
+    }
+  },
+  "welcome": {
+    "enabled": true,
+    "channel": "welcome",
+    "message": "Sunucumuza hos geldin {user}!",
+    "role": "Uye"
+  },
+  "music": {
+    "enabled": true,
+    "max_queue": 100,
+    "max_song_length": 600,
+    "default_volume": 50
+  },
+  "tickets": {
+    "enabled": true,
+    "categories": ["Destek", "Satış", "Teknik"],
+    "max_tickets": 10
+  },
+  "giveaways": {
+    "enabled": true,
+    "default_duration": 3600,
+    "min_winners": 1,
+    "max_winners": 10
+  },
+  "anti_raid": {
+    "enabled": true,
+    "join_threshold": 10,
+    "join_window": 60,
+    "action": "kick"
+  },
+  "web": {
+    "enabled": true,
+    "host": "0.0.0.0",
+    "port": 5000,
+    "secret_key": "cok_guvenli_rastgele_anahtar_12345",
+    "url": "https://web-3-tdo1.onrender.com"
+  },
+  "security": {
+    "encryption_key": "32 karakterlik guvenli anahtar yaz",
+    "allowed_domains": [],
+    "blacklisted_words": []
+  },
+  "api": {
+    "weather_api": "",
+    "crypto_api": "",
+    "ai_api": ""
+  },
+  "logging": {
+    "enabled": true,
+    "level": "INFO",
+    "file": "huh.log",
+    "max_size": 10485760,
+    "backup_count": 5
+  }
+}

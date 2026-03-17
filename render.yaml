@@ -1,0 +1,19 @@
+services:
+  - name: huh
+    github_repo: YOUR_USERNAME/huh
+    branch: main
+    build_command: pip install -r requirements.txt
+    start_command: python main.py
+    env_vars:
+      - key: DISCORD_TOKEN
+        from_service: secret
+        sync: false
+      - key: CLIENT_ID
+        value: "1452460095085744238"
+      - key: CLIENT_SECRET
+        from_service: secret
+        sync: false
+      - key: WEB_URL
+        value: "https://web-3-tdo1.onrender.com"
+    instance_type: free
+    health_check_path: /

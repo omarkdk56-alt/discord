@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🤖 Huh Bot - Discord'un En Kapsamlı Botu</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="bg-grid"></div>
+    <div class="floating-orb orb-1"></div>
+    <div class="floating-orb orb-2"></div>
+    <div class="floating-orb orb-3"></div>
+
+    <!-- LANDING PAGE (Before Login) -->
+    <div id="landing-page">
+        <!-- Navbar -->
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="/" class="logo">
+                    <div class="logo-icon">
+                        <img src="https://cdn.discordapp.com/avatars/1452460095085744238/a_87d8f4e6c2f0a2e3d4e5f6a7b8c9d0e1.gif" alt="Huh Bot" onerror="this.src='https://cdn.discordapp.com/embed/avatars/0.png'">
+                    </div>
+                    <span>Huh Bot</span>
+                </a>
+                <div class="nav-links">
+                    <a href="#ozellikler">Özellikler</a>
+                    <a href="#istatistikler">İstatistikler</a>
+                    <a href="#komutlar">Komutlar</a>
+                    <a href="#" onclick="goToPanel(event)" class="panel-link">Panel</a>
+                </div>
+                <a href="/api/discord-oauth" class="login-btn">
+                    <i class="fab fa-discord"></i>
+                    <span>Discord ile Giriş</span>
+                </a>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-crown"></i>
+                    <span>Discord'un En Kapsamlı Botu</span>
+                </div>
+                <h1>Sunucunu <span class="gradient-text">Huh Bot</span> ile<br>Zirveye Taşı!</h1>
+                <p class="hero-desc">
+                    Moderasyon, Ekonomi, Eğlence, Müzik, Seviye ve daha fazlası!<br>
+                    <span class="highlight">+750 komut</span> ile sunucunuzu yönetmenin en kolay yolu.
+                </p>
+                <div class="hero-buttons">
+                    <a href="https://discord.com/oauth2/authorize?client_id=1452460095085744238&permissions=8&scope=bot" class="btn btn-primary" target="_blank">
+                        <i class="fas fa-plus"></i>
+                        <span>Sunucuya Ekle</span>
+                    </a>
+                    <a href="#ozellikler" class="btn btn-secondary">
+                        <i class="fas fa-star"></i>
+                        <span>Özellikler</span>
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number" id="serverCount">0</span>
+                        <span class="stat-label">Sunucu</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-number" id="userCount">0</span>
+                        <span class="stat-label">Kullanıcı</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-number">750+</span>
+                        <span class="stat-label">Komut</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="bot-card">
+                    <div class="bot-avatar">
+                        <img src="https://cdn.discordapp.com/avatars/1452460095085744238/a_87d8f4e6c2f0a2e3d4e5f6a7b8c9d0e1.gif" alt="Huh Bot" onerror="this.src='https://cdn.discordapp.com/embed/avatars/0.png'">
+                    </div>
+                    <div class="bot-info">
+                        <h3>🤖 Huh Bot</h3>
+                        <p>Online</p>
+                    </div>
+                    <div class="bot-status">
+                        <span class="status-dot"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features" id="ozellikler">
+            <div class="section-header">
+                <h2>Özellikler</h2>
+                <p>Sunucunuz için ihtiyacınız olan her şey tek bir botta!</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon" style="background: linear-gradient(135deg, #5865F2, #4752C4);">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Moderasyon</h3>
+                    <p>oto-kick, anti-spam, link koruma, caps koruma ve daha fazlası</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon" style="background: linear-gradient(135deg, #57F287, #3BA55C);">
+                        <i class="fas fa-coins"></i>
+                    </div>
+                    <h3>Ekonomi Sistemi</h3>
+                    <p>Para kazan, market alışverişi, slot, balık tut ve daha fazlası</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon" style="background: linear-gradient(135deg, #EB459E, #EE5396);">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <h3>Eğlence</h3>
+                    <p>Ascii, şaka, anket, çekiliş, oyunlar ve sınırsız eğlence</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon" style="background: linear-gradient(135deg, #FEE75C, #FAA61A);">
+                        <i class="fas fa-music"></i>
+                    </div>
+                    <h3>Müzik Sistemi</h3>
+                    <p>Spotify, YouTube destekli yüksek kaliteli müzik</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon" style="background: linear-gradient(135deg, #ED4245, #EE5396);">
+                        <i class="fas fa-level-up-alt"></i>
+                    </div>
+                    <h3>Seviye Sistemi</h3>
+                    <p>Otomatik seviye, ödüller, rolleri ileXP sistemi</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon" style="background: linear-gradient(135deg, #9B84EC, #5865F2);">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Hoş Geldin</h3>
+                    <p>Özelleştirilebilir giriş/çıkış mesajları ve otorol</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats" id="istatistikler">
+            <div class="stats-container">
+                <div class="stat-card">
+                    <i class="fas fa-server"></i>
+                    <span class="stat-value" id="statServers">0</span>
+                    <span class="stat-name">Sunucu</span>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-users"></i>
+                    <span class="stat-value" id="statUsers">0</span>
+                    <span class="stat-name">Toplam Kullanıcı</span>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-message"></i>
+                    <span class="stat-value">1M+</span>
+                    <span class="stat-name">İşlenen Mesaj</span>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-slash"></i>
+                    <span class="stat-value">50K+</span>
+                    <span class="stat-name">Silinen Mesaj</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Commands Section -->
+        <section class="commands" id="komutlar">
+            <div class="section-header">
+                <h2>Komutlar</h2>
+                <p>Hmm, bu kadar çok komutu kim kullanacak? 🌝</p>
+            </div>
+            <div class="commands-grid">
+                <div class="command-category">
+                    <h3><i class="fas fa-shield-alt"></i> Moderasyon</h3>
+                    <ul>
+                        <li><code>kick</code> - Üye at</li>
+                        <li><code>ban</code> - Üye yasakla</li>
+                        <li><code>unban</code> - Yasak kaldır</li>
+                        <li><code>sil</code> - Mesaj sil</li>
+                        <li><code>uyar</code> - Uyarı ver</li>
+                        <li><code>sustur</code> - Sustur</li>
+                    </ul>
+                </div>
+                <div class="command-category">
+                    <h3><i class="fas fa-coins"></i> Ekonomi</h3>
+                    <ul>
+                        <li><code>para</code> - Bakiye gör</li>
+                        <li><code>günlük</code> - Günlük para</li>
+                        <li><code>haftalık</code> - Haftalık para</li>
+                        <li><code>çalış</code> - Çalış para kazan</li>
+                        <li><code>bahis</code> - Bahis yap</li>
+                        <li><code>market</code> - Market</li>
+                    </ul>
+                </div>
+                <div class="command-category">
+                    <h3><i class="fas fa-fun"></i> Eğlence</h3>
+                    <ul>
+                        <li><code>şaka</code> - Rastgele şaka</li>
+                        <li><code>ascii</code> - ASCII sanat</li>
+                        <li><code>şans</code> - Şansını dene</li>
+                        <li><code>oylama</code> - Anket yap</li>
+                        <li><code>çekiliş</code> - Çekiliş</li>
+                        <li><code>avatar</code> - Avatar bak</li>
+                    </ul>
+                </div>
+                <div class="command-category">
+                    <h3><i class="fas fa-cog"></i> Ayarlar</h3>
+                    <ul>
+                        <li><code>prefix</code> - Prefix değiştir</li>
+                        <li><code>otorol</code> - Otorol ayarla</li>
+                        <li><code>hoşgeldin</code> - Hoş geldin ayarla</li>
+                        <li><code>gelen-giden</code> - Giriş/çıkış</li>
+                        <li><code>log-kanal</code> - Log kanalı</li>
+                        <li><code>davet</code> - Davet oluştur</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>© 2024 Huh Bot - Tüm hakları saklıdır.</p>
+            <div class="footer-links">
+                <a href="#"><i class="fab fa-discord"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+            </div>
+        </footer>
+    </div>
+
+    <!-- DASHBOARD (After Login) -->
+    <div id="dashboard" style="display: none;">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <a href="/" class="logo">
+                    <div class="logo-icon">
+                        <img src="https://cdn.discordapp.com/avatars/1452460095085744238/a_87d8f4e6c2f0a2e3d4e5f6a7b8c9d0e1.gif" alt="Huh Bot" onerror="this.src='https://cdn.discordapp.com/embed/avatars/0.png'">
+                    </div>
+                    <span>Huh Bot</span>
+                </a>
+            </div>
+            
+            <!-- User Profile -->
+            <div class="user-profile" id="userProfile">
+                <div class="user-avatar">
+                    <img src="https://cdn.discordapp.com/embed/avatars/0.png" alt="Avatar" id="userAvatar">
+                </div>
+                <div class="user-info">
+                    <span class="username" id="userName">Kullanıcı</span>
+                    <span class="user-tag" id="userTag">#0000</span>
+                </div>
+                <button class="logout-btn" onclick="logout()">
+                    <i class="fas fa-sign-out-alt"></i>
+                </button>
+            </div>
+
+            <!-- Server List -->
+            <div class="server-list">
+                <div class="server-list-header">
+                    <span>Sunucularım</span>
+                    <span class="server-count" id="serverCountList">0</span>
+                </div>
+                <div class="servers" id="serverList">
+                    <!-- Servers loaded via JS -->
+                </div>
+            </div>
+
+            <div class="sidebar-footer">
+                <a href="/" class="back-home">
+                    <i class="fas fa-home"></i>
+                    <span>Ana Sayfa</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Dashboard Header -->
+            <header class="dashboard-header">
+                <div class="header-left">
+                    <button class="menu-toggle" onclick="toggleSidebar()">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <h1 id="pageTitle">Genel Bakış</h1>
+                </div>
+                <div class="header-right">
+                    <span class="current-server" id="currentServerName">Sunucu seçin</span>
+                </div>
+            </header>
+
+            <!-- Overview Page -->
+            <div class="page-content" id="page-overview">
+                <div class="overview-stats">
+                    <div class="overview-stat-card">
+                        <div class="stat-icon" style="background: linear-gradient(135deg, #5865F2, #4752C4);">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-details">
+                            <span class="stat-value" id="overviewMembers">0</span>
+                            <span class="stat-label">Üye</span>
+                        </div>
+                    </div>
+                    <div class="overview-stat-card">
+                        <div class="stat-icon" style="background: linear-gradient(135deg, #57F287, #3BA55C);">
+                            <i class="fas fa-message"></i>
+                        </div>
+                        <div class="stat-details">
+                            <span class="stat-value" id="overviewMessages">0</span>
+                            <span class="stat-label">Mesaj</span>
+                        </div>
+                    </div>
+                    <div class="overview-stat-card">
+                        <div class="stat-icon" style="background: linear-gradient(135deg, #EB459E, #EE5396);">
+                            <i class="fas fa-channel"></i>
+                        </div>
+                        <div class="stat-details">
+                            <span class="stat-value" id="overviewChannels">0</span>
+                            <span class="stat-label">Kanal</span>
+                        </div>
+                    </div>
+                    <div class="overview-stat-card">
+                        <div class="stat-icon" style="background: linear-gradient(135deg, #FEE75C, #FAA61A);">
+                            <i class="fas fa-role"></i>
+                        </div>
+                        <div class="stat-details">
+                            <span class="stat-value" id="overviewRoles">0</span>
+                            <span class="stat-label">Rol</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quick-settings">
+                    <h2><i class="fas fa-bolt"></i> Hızlı Ayarlar</h2>
+                    <div class="quick-grid">
+                        <div class="quick-card" onclick="showPage('moderation')">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Moderasyon</span>
+                        </div>
+                        <div class="quick-card" onclick="showPage('welcome')">
+                            <i class="fas fa-door-open"></i>
+                            <span>Hoş Geldin</span>
+                        </div>
+                        <div class="quick-card" onclick="showPage('economy')">
+                            <i class="fas fa-coins"></i>
+                            <span>Ekonomi</span>
+                        </div>
+                        <div class="quick-card" onclick="showPage('levels')">
+                            <i class="fas fa-level-up-alt"></i>
+                            <span>Seviye</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Moderation Page -->
+            <div class="page-content" id="page-moderation" style="display: none;">
+                <div class="settings-section">
+                    <h2><i class="fas fa-shield-alt"></i> Moderasyon Ayarları</h2>
+                    <div class="settings-grid">
+                        <div class="setting-card">
+                            <div class="setting-header">
+                                <div class="setting-info">
+                                    <i class="fas fa-robot"></i>
+                                    <div>
+                                        <h3>Anti-Spam</h3>
+                                        <p>Spam yapanları otomatik engelle</p>
+                                    </div>
+                                </div>
+                                <label class="toggle">
+                                    <input type="checkbox" id="modAntispam">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="setting-card">
+                            <div class="setting-header">
+                                <div class="setting-info">
+                                    <i class="fas fa-link"></i>
+                                    <div>
+                                        <h3>Anti-Link</h3>
+                                        <p>Link atanları engelle</p>
+                                    </div>
+                                </div>
+                                <label class="toggle">
+                                    <input type="checkbox" id="modAntilink">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="setting-card">
+                            <div class="setting-header">
+                                <div class="setting-info">
+                                    <i class="fas fa-font"></i>
+                                    <div>
+                                        <h3>Anti-Caps</h3>
+                                        <p>Büyük harf spamını engelle</p>
+                                    </div>
+                                </div>
+                                <label class="toggle">
+                                    <input type="checkbox" id="modAnticaps">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="setting-card">
+                            <div class="setting-header">
+                                <div class="setting-info">
+                                    <i class="fas fa-user-plus"></i>
+                                    <div>
+                                        <h3>Otorol</h3>
+                                        <p>Yeni üyelere otomatik rol ver</p>
+                                    </div>
+                                </div>
+                                <label class="toggle">
+                                    <input type="checkbox" id="modAutorole">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="setting-inputs">
+                        <div class="input-group">
+                            <label>Otorol Rol ID</label>
+                            <input type="text" id="autoroleRoleId" placeholder="Rol ID giriniz">
+                        </div>
+                        <div class="input-group">
+                            <label>Log Kanal ID</label>
+                            <input type="text" id="logChannelId" placeholder="Kanal ID giriniz">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Welcome Page -->
+            <div class="page-content" id="page-welcome" style="display: none;">
+                <div class="settings-section">
+                    <h2><i class="fas fa-door-open"></i> Hoş Geldin Ayarları</h2>
+                    
+                    <div class="setting-card">
+                        <div class="setting-header">
+                            <div class="setting-info">
+                                <i class="fas fa-bell"></i>
+                                <div>
+                                    <h3>Giriş Mesajı</h3>
+                                    <p>Üye girişinde mesaj gönder</p>
+                                </div>
+                            </div>
+                            <label class="toggle">
+                                <input type="checkbox" id="welcomeEnabled">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="setting-card">
+                        <div class="setting-header">
+                            <div class="setting-info">
+                                <i class="fas fa-door-closed"></i>
+                                <div>
+                                    <h3>Çıkış Mesajı</h3>
+                                    <p>Üye çıkışında mesaj gönder</p>
+                                </div>
+                            </div>
+                            <label class="toggle">
+                                <input type="checkbox" id="leaveEnabled">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="setting-inputs">
+                        <div class="input-group">
+                            <label>Giriş Kanal ID</label>
+                            <input type="text" id="welcomeChannelId" placeholder="Kanal ID giriniz">
+                        </div>
+                        <div class="input-group">
+                            <label>Giriş Mesajı</label>
+                            <textarea id="welcomeMessage" placeholder="Hoş geldin {user}, {server} sunucumuzun {membercount}. üyesi!"></textarea>
+                        </div>
+                        <div class="input-group">
+                            <label>Çıkış Kanal ID</label>
+                            <input type="text" id="leaveChannelId" placeholder="Kanal ID giriniz">
+                        </div>
+                        <div class="input-group">
+                            <label>Çıkış Mesajı</label>
+                            <textarea id="leaveMessage" placeholder="Güle güle {user}, tekrar bekleriz!"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Economy Page -->
+            <div class="page-content" id="page-economy" style="display: none;">
+                <div class="settings-section">
+                    <h2><i class="fas fa-coins"></i> Ekonomi Ayarları</h2>
+                    
+                    <div class="setting-card">
+                        <div class="setting-header">
+                            <div class="setting-info">
+                                <i class="fas fa-toggle-on"></i>
+                                <div>
+                                    <h3>Ekonomi Sistemi</h3>
+                                    <p>Sunucuda ekonomi sistemini aktif et</p>
+                                </div>
+                            </div>
+                            <label class="toggle">
+                                <input type="checkbox" id="economyEnabled">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="setting-inputs">
+                        <div class="input-group">
+                            <label>Günlük Ödül</label>
+                            <input type="number" id="dailyReward" value="250">
+                        </div>
+                        <div class="input-group">
+                            <label>Başlangıç Bakiyesi</label>
+                            <input type="number" id="startBalance" value="500">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Levels Page -->
+            <div class="page-content" id="page-levels" style="display: none;">
+                <div class="settings-section">
+                    <h2><i class="fas fa-level-up-alt"></i> Seviye Ayarları</h2>
+                    
+                    <div class="setting-card">
+                        <div class="setting-header">
+                            <div class="setting-info">
+                                <i class="fas fa-toggle-on"></i>
+                                <div>
+                                    <h3>Seviye Sistemi</h3>
+                                    <p>Sunucuda seviye sistemini aktif et</p>
+                                </div>
+                            </div>
+                            <label class="toggle">
+                                <input type="checkbox" id="levelsEnabled">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="setting-inputs">
+                        <div class="input-group">
+                            <label>Mesaj Başına XP</label>
+                            <input type="number" id="xpPerMessage" value="5">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Save Button -->
+            <div class="save-bar" id="saveBar" style="display: none;">
+                <button class="save-btn" onclick="saveSettings()">
+                    <i class="fas fa-save"></i>
+                    Ayarları Kaydet
+                </button>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
